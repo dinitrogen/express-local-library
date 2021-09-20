@@ -21,6 +21,14 @@ Handlebars.registerHelper('isLast', function(array, index) {
     } else return false;
 });
 
+Handlebars.registerHelper('getFormValue', function(object, parameter) {
+    if (undefined===object) {
+        return '';
+    } else {
+        return object[parameter];
+    }
+});
+
 
 exports.index = function(req, res) {
 
