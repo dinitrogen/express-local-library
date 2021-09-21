@@ -1,5 +1,12 @@
 ### Express Local Library
-- Based on the MDN local library tutorial (assignment for The Odin Project)
+- A library catalog application built using Express with guidance from the MDN local library tutorial.
 
 ## Live demo
-- coming soon...
+- https://still-woodland-58189.herokuapp.com/
+
+## Technology used
+- NodeJS
+- Express (express generator)
+- Handlebars
+- Mongoose and MongoDB
+- Heroku
