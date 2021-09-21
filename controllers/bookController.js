@@ -26,7 +26,7 @@ Handlebars.registerHelper('getFormValue', function(object, parameter) {
     if (undefined===object) {
         return '';
     } else {
-        console.log(object[parameter]);
+        
         return object[parameter];
     }
 });
