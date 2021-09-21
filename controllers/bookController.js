@@ -68,7 +68,7 @@ if (status=='Maintenance') {
 });
 
 Handlebars.registerHelper('isBookSelected', function(book, id) {
-if (book.toString() == id.toString()) {
+if (book.toString() == id.toString() || book._id.toString() == id.toString()) {
     return true;
 } else return false;
 });

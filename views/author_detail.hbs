@@ -1,6 +1,6 @@
 <h1>Author: {{author.name}}</h1>
 
-<p>{{author.date_of_birth_formatted}} - {{author.date_of_death_formatted}}</p>
+<p>{{author.lifespan}}</p>
 
 <div style="margin-left:20px;margin-top:20px">
 
@@ -23,4 +23,7 @@
 <hr>
 <p>
     <a href={{concat author.url '/delete'}}>Delete author</a>
+</p>
+<p>
+    <a href={{concat author.url '/update'}}>Update author</a>
 </p>
