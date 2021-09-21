@@ -1,0 +1,13 @@
+<h1>ID: {{bookinstance._id}}</h1>
+<h4>Title: {{bookinstance.book.title}} ({{bookinstance.status}})</h4>
+
+<p>Do you really want to delete this Book Instance?</p>
+
+<form method="POST" action="">
+    <div class="form-group">
+        <input id="bookinstanceid" class="form-control" type="hidden" name="bookinstanceid" required="true" value={{bookinstance._id}}>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Delete</button>
+
+</form>

@@ -21,3 +21,10 @@
     <p><strong>Due back:</strong> {{bookinstance.due_back_formatted}}</p>
     {{/unless}}
 </p>
+<hr>
+<p>
+    <a href={{concat bookinstance.url '/delete'}}>Delete Book Instance</a>
+</p>
+<p>
+    <a href={{concat bookinstance.url '/update'}}>Update Book Instance</a>
+</p>
