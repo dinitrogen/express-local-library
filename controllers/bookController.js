@@ -267,7 +267,7 @@ exports.book_delete_get = function(req, res, next) {
           Book.findById(req.body.bookid).exec(callback)
         },
         book_instances: function(callback) {
-          BookInstances.find({ 'book': req.body.bookid }).exec(callback)
+          BookInstance.find({ 'book': req.body.bookid }).exec(callback)
         },
     }, function(err, results) {
         if (err) { return next(err); }
@@ -279,7 +279,7 @@ exports.book_delete_get = function(req, res, next) {
         }
         else {
             // Book has no instances. Delete object and redirect to the list of books.
-            BookInstance.findByIdAndRemove(req.body.bookid, function deleteBook(err) {
+            Book.findByIdAndRemove(req.body.bookid, function deleteBook(err) {
                 if (err) { return next(err); }
                 // Success - go to book list
                 res.redirect('/catalog/books')

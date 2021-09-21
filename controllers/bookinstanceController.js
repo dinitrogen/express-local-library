@@ -123,7 +123,7 @@ exports.bookinstance_delete_get = function(req, res, next) {
         BookInstance.findByIdAndRemove(req.body.bookinstanceid, function deleteBookInstance(err) {
             if (err) { return next(err); }
             // Success - go to book list
-            res.redirect('/catalog/booksinstances')
+            res.redirect('/catalog/bookinstances')
         });
     });
   };
