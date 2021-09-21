@@ -1,0 +1,47 @@
+<h1>{{title}}</h1>
+
+<form method="POST" action="">
+    <div class="form-group">
+        <label for="book">Book:</label>
+        <select id="book" class="form-control" type="select" placeholder="Select book" name="book" required="true">
+            {{#each (sort_az book_list)}}
+            {{#if ../bookinstance}}
+            <option value={{this._id}} {{#if (isBookSelected ../bookinstance.book this._id)}}selected{{/if}}>{{this.title}}</option>
+            {{else}}
+            <option value={{this._id}}>{{this.title}}</option>
+            {{/if}}
+            {{/each}}
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="imprint">Imprint:</label>
+        <input id="imprint" class="form-control" type="text" placeholder="Publisher and date information" name="imprint" value={{getFormValue bookinstance 'imprint'}}>
+    </div>
+
+    <div class="form-group">
+        <label for="due_back">Dage when book available:</label>
+        <input id="due_back" class="form-control" type="date" name="due_back" value={{getFormValue bookinstance 'due_back'}}>
+    </div>
+
+    <div class="form-group">
+        <label for="status">Status:</label>
+        <select id="status" class="form-control" type="select" placeholder="Select status" name="status">
+            <option value="Maintenance">Maintenance</option>
+            <option value="Available">Available</option>
+            <option value="Loaned">Loaned</option>
+            <option value="Reserved">Reserved</option>
+        </select> 
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+
+</form>
+
+{{#if errors}}
+<ul>
+    {{#each errors}}
+    <li>{{this.msg}}</li>
+    {{/each}}
+</ul>
+{{/if}}
